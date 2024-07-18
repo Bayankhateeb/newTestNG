@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan Department" parallel="tests" thread-count="6">
+
+<listeners>
+<listener class-name = "newTestNG.Listeners"/>
+
+
+
+</listeners>
+
+
+
+  <test name="Personal Loan">
+      <parameter name = "URL"  value = "personalloan.com"/>
+  
+  
+    <classes>
+      <class name="newTestNG.day1">
+      <methods>
+      
+                  <include name = "Demo"/> // remove  method from execution 
+      
+      </methods>
+      
+      </class>
+      
+            <class name="newTestNG.day2"/>
+                  <class name="newTestNG.day4"/>
+      
+    </classes>
+    
+    
+
+    
+  </test> <!-- Test -->
+  <parameter name = "URL"  value = "carloan.com"/>
+  
+  <parameter name = "APIKey/usrname"  value = "12345"/> 
+  
+  
+  <test name = "Car Loan">
+           
+  <classes>
+            <class name="newTestNG.day3">
+            
+            <methods>
+            
+            <exclude name = "Mobile.*"/> // remove  method from execution 
+            
+            
+            </methods>
+            
+            </class>
+      
+    </classes>
+  
+  </test>
+</suite> <!-- Suite -->
